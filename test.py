@@ -69,12 +69,14 @@ print("""Добро пожаловать в игру крестики-нолик
 координаты X = от 0 до 2 и Y = от 0 до 2
 --------------------------------------
 Приятного вам время препровождения""")
-for i in board:
-    print(*i)
+
 
 while True:
     g = input("Вы хотите играть Yes или No?")
     if g == "Yes":
+        for i in range(1, len(board)):
+            for j in range(1, len(board[i])):
+                board[i][j] = '-'
         for i in board:
             print(*i)
         input_cordinate()
